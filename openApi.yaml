@@ -1,0 +1,97 @@
+openapi: 3.0.3
+info:
+  title: 天気アプリのBFFの仕様書
+  description: |-
+    kadai-2-weather-api-TakahataTakumi と kadai-2-weather-a-TakahataTakumiで使われる
+  version: 1.0.11
+servers:
+  - url: http://localhost:3000/
+tags:
+  - name: api
+    description: Everything about weather
+paths:
+  /api:
+    get:
+      tags:
+        - api
+      summary: find weather by pref,area
+      description: return weather
+      operationId: api
+      parameters:
+        - name: pref
+          in: query
+          description: 都道府県
+          required: true
+          schema:
+            type: string
+        - name: area
+          in: query
+          description: 市区町村
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/ApiResponse"
+        "400":
+          description: Invalid status value
+components:
+  schemas:
+    Area:
+      required:
+        - pref
+        - area
+      type: object
+      properties:
+        pref:
+          type: string
+          example: 岩手県
+        area:
+          type: string
+          example: 内陸
+    ApiResponse:
+      type: object
+      properties:
+        pref:
+          type: string
+          example: 岩手県
+        area:
+          type: string
+          example: 内陸
+        today:
+          type: object
+          properties:
+            weather:
+              type: string
+              example: 晴れ　時々　くもり
+            mintemp:
+              type: integer
+              example: 12.3
+            maxtemp:
+              type: integer
+              example: 28.3
+        tomorrow:
+          type: object
+          properties:
+            weather:
+              type: string
+              example: 晴れ　時々　くもり
+            mintemp:
+              type: integer
+              example: 12.3
+            maxtemp:
+              type: integer
+              example: 28.3
+  requestBodies:
+    Area:
+      description: Area Object
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Area"
