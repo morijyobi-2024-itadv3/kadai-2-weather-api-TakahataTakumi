@@ -20,3 +20,5 @@ export async function GET(request: Request) {
 
   return Response.json(weather);
 }
+
+export default GET;
