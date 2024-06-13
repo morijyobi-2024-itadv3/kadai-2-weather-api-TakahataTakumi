@@ -5,7 +5,7 @@ export async function GET(request: Request) {
   const area = searchParams.get("area");
 
   if (pref !== "岩手県" || area !== "内陸") {
-    return new Response("パラメーターが違います", { status: 500 });
+    return new Response("パラメーターが違います", { status: 400 });
   }
 
   const res = await fetch(
