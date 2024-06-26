@@ -3,14 +3,12 @@ export type TypeResponse = {
   area: string;
   today: {
     weather: string;
-    tempHigh: string;
-    tempLow: string | "-";
-    timeDefined: string;
+    mintemp: string;
+    maxtemp: string | "-";
   };
   tomorrow: {
     weather: string;
-    tempHigh: string;
-    tempLow: string;
-    timeDefined: string;
+    mintemp: string;
+    maxtemp: string;
   };
 };
