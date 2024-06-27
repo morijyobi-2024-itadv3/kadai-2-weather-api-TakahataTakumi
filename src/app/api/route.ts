@@ -1,3 +1,5 @@
+import { type TypeResponse } from "@/app/api/type";
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
 
