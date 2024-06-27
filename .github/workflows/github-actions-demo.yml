@@ -9,7 +9,7 @@ jobs:
     timeout-minutes: 10
     strategy:
       matrix:
-        runner: [ubuntu-latest]
+        runner: [ubuntu-22.04]
         node: [20]
     name: build on node ${{ matrix.node }} ${{ matrix.runner }}
     steps:
