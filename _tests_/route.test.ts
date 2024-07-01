@@ -81,7 +81,6 @@ describe("APIのレスポンス", () => {
       );
       data = await response.json();
     });
-
     describe("レスポンスヘッダ", () => {
       it("レスポンスヘッダは application/json である", () => {
         expect(response.headers.get("Content-Type")).toBe("application/json");
@@ -110,14 +109,14 @@ describe("APIのレスポンス", () => {
           expect(data.today).toHaveProperty("weather");
         });
 
-        it("jsonに today.tempHigh が含まれる", () => {
+        it("jsonに today.maxtemp が含まれる", () => {
           expect(data.today.maxtemp).toBeDefined();
-          expect(data.today).toHaveProperty("tempHigh");
+          expect(data.today).toHaveProperty("maxtemp");
         });
 
-        it("jsonに today.tempLow が含まれる", () => {
+        it("jsonに today.mintemp が含まれる", () => {
           expect(data.today.mintemp).toBeDefined();
-          expect(data.today).toHaveProperty("tempLow");
+          expect(data.today).toHaveProperty("mintemp");
         });
 
         it("jsonに tomorrow が含まれる", () => {
@@ -130,14 +129,14 @@ describe("APIのレスポンス", () => {
           expect(data.tomorrow).toHaveProperty("weather");
         });
 
-        it("jsonに tomorrow.tempHigh が含まれる", () => {
+        it("jsonに tomorrow.maxtemp が含まれる", () => {
           expect(data.tomorrow.maxtemp).toBeDefined();
-          expect(data.tomorrow).toHaveProperty("tempHigh");
+          expect(data.tomorrow).toHaveProperty("maxtemp");
         });
 
-        it("jsonに tomorrow.tempLow が含まれる", () => {
+        it("jsonに tomorrow.mintemp が含まれる", () => {
           expect(data.tomorrow.mintemp).toBeDefined();
-          expect(data.tomorrow).toHaveProperty("tempLow");
+          expect(data.tomorrow).toHaveProperty("mintemp");
         });
       });
     });
