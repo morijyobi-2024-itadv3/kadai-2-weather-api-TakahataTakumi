@@ -36,9 +36,7 @@ paths:
           content:
             application/json:
               schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/ApiResponse'
+                $ref: '#/components/schemas/ApiResponse'
         '400':
           description: Invalid status value
 components:
