@@ -1,4 +1,4 @@
-import { type TypeResponse } from '@/app/api/type'
+import { type TypeResponse } from '@/app/ver0.2/api/type'
 
 describe('パラメーターが正常に設定されている', () => {
   const pref = encodeURIComponent('岩手県')
