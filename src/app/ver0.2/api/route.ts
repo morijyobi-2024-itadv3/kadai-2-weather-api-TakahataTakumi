@@ -1,9 +1,9 @@
-import { type TypeResponse } from '@/app/api/type'
+import { type TypeResponse } from '@/app/ver0.2/api/type'
 import {
   type JmaJsonArray,
   type TempArea,
   type WeatherArea,
-} from '@/app/api/type.jma'
+} from '@/app/ver0.2/api/type.jma'
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
