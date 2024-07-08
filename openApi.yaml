@@ -10,7 +10,7 @@ tags:
   - name: api
     description: Everything about weather
 paths:
-  /api:
+  /ver0.2/api:
     get:
       tags:
         - api
