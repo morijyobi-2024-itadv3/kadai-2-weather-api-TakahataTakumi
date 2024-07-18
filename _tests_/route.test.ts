@@ -138,6 +138,14 @@ describe('APIのレスポンス', () => {
           expect(data.tomorrow.mintemp).toBeDefined()
           expect(data.tomorrow).toHaveProperty('mintemp')
         })
+
+        it('data.today.weatherに空白が含まれていない', () => {
+          expect(data.today.weather).toMatch(/^\S*$/)
+        })
+
+        it('data.tomorrow.weatherに空白が含まれていない', () => {
+          expect(data.tomorrow.weather).toMatch(/^\S*$/)
+        })
       })
     })
   })
