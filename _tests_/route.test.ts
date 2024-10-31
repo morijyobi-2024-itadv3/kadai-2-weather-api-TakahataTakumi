@@ -68,8 +68,8 @@ describe('GETリクエスト以外の場合', () => {
 
 describe('APIのレスポンス', () => {
   describe('パラメーターが正しい場合', () => {
-    const pref = '岩手県'
-    const area = '内陸'
+  const pref = encodeURIComponent('岩手県')
+  const area = encodeURIComponent('内陸')
 
     let response: Response
     let data: TypeResponse
